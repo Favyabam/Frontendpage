@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Page</title>
+    <style>
+        /*  CSS styling */
+    </style>
+</head>
+<body>
+    <h1 data-testid="FAvy 1">Favy 1</h1>
+    <img src="IMG-20230625-WA0017.jpg" alt="Favy 1" data-testid="slackDisplayImage">
+    <p data-testid="currentDayOfTheWeek"></p>
+    <p data-testid="currentUTCTime"></p>
+    <p data-testid="myTrack">Frontend</p>
+    <a href="https://github.com/Favyabam/Frontendpage.git" data-testid="githubURL">GitHub Repository</a>
+
+    <script>
+        // JavaScript to update dynamic data
+        const slackName = "Favy 1";
+        const slackDisplayImage = "IMG-20230625-WA0017.jpg";
+        const track = "Frontend";
+        const githubURL = "https://github.com/Favyabam/Frontendpage.git";
+
+        // Get the current day of the week
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const currentDate = new Date();
+        const currentDayOfTheWeek = daysOfWeek[currentDate.getUTCDay()];
+
+        // Get the current UTC time in milliseconds
+        const currentUTCTime = Date.now();
+
+        // Update the content of the elements
+        document.querySelector('[data-testid="slackUserName"]').textContent = slackName;
+        document.querySelector('[data-testid="slackDisplayImage"]').src = slackDisplayImage;
+        document.querySelector('[data-testid="slackDisplayImage"]').alt = slackName;
+        document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = currentDayOfTheWeek;
+        document.querySelector('[data-testid="currentUTCTime"]').textContent = currentUTCTime;
+        document.querySelector('[data-testid="myTrack"]').textContent = track;
+        document.querySelector('[data-testid="githubURL"]').href = githubURL;
+    </script>
+</body>
+</html>
